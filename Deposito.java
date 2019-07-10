@@ -141,5 +141,52 @@ public class Deposito
 		
 		return productoCaro;
 	}
+	
+	public void ordenarPorCodigo()
+	{
+		for(int i = 0; i < cantidadProductosIngresados ; i++)
+		{
+			for(int j = 0; j < cantidadProductosIngresados-1 ; j++)
+			{
+				if(listaProductos[j].getCodigo().compareTo(listaProductos[j+1].getCodigo())>= 1)
+				{
+					Productos temporal  = null;
+					temporal = listaProductos[j];
+					listaProductos[j] = listaProductos[j+1];
+					listaProductos[j+1] = temporal;
+				}
+			}
+			
+		}
+		
+	}
+	
+	public void eliminarProducto(String codigo)
+	{
+		for(int i = 0; i < cantidadProductosIngresados; i++)
+		{
+			if(codigo.equalsIgnoreCase(listaProductos[i].getCodigo()))
+			{
+				if(i < cantidadProductosIngresados && i >= cantidadProductosIngresados -1)
+				{
+			
+						listaProductos[i] = null;
+					
+				}
+				else
+				{
+					for(int j = i; j < cantidadProductosIngresados-1; j++)
+					{
+						
+						listaProductos[j] = listaProductos[j+1];
+						listaProductos[j+1] = null;
+						
+					}
+				}
+				cantidadProductosIngresados--;
+			}
+		}
+		
+	}
 	    
 }
