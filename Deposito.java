@@ -188,5 +188,21 @@ public class Deposito
 		}
 		
 	}
+	
+	public boolean validarContrasenia(String contrasenia)
+	{
+		if(contrasenia.length() >= 8)
+		{
+			for(int i = 0; i < contrasenia.length(); i++)
+			{
+				if(Character.isDigit(contrasenia.charAt(i)))
+				{
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
 	    
 }

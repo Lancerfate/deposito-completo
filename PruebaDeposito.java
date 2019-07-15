@@ -22,7 +22,7 @@ public class PruebaDeposito {
 	    miDeposito.verListaProductos();*/
 	
 	
-	  Scanner teclado= new Scanner(System.in); 
+	 /* Scanner teclado= new Scanner(System.in); 
 	  int opcion= 0 ; 
 	
 	  System.out.println("¿Cuantos productos entraran en su deposito?");
@@ -55,8 +55,10 @@ public class PruebaDeposito {
 		      float precio=teclado.nextFloat();
 		      System.out.println("Ingrese la cantidad de productos.");
 		      int cantidadProductos=teclado.nextInt();
+		      System.out.println("Ingrese la contraseña");
+		      String contrasenia = teclado.next();
 		     
-		      Productos miProducto= new Productos (codigo, descripcion, precio, cantidadProductos);
+		      Productos miProducto= new Productos (codigo, descripcion, precio, cantidadProductos, contrasenia);
 			  miDeposito.agregarProducto(miProducto);
 		      break;
 		   
@@ -105,25 +107,30 @@ public class PruebaDeposito {
 			  break;
 		  }
 		  
-	  }while(opcion!=0) ;	
+	  }while(opcion!=0) ;	*/
 		
-		/*Deposito miDeposito = new Deposito(5);
-		Productos miProducto = new Productos("A987", "AAA", 17.5f, 98);
-		Productos miProducto1 = new Productos("B987", "AAA", 17.5f, 98);
+		Deposito miDeposito = new Deposito(5);
+		Productos miProducto = new Productos("A987", "AAA", 17.5f, 98, "hola4hola");
+		/*Productos miProducto1 = new Productos("B987", "AAA", 17.5f, 98);
 		Productos miProducto2 = new Productos("C987", "AAA", 17.5f, 98);
 		Productos miProducto3 = new Productos("D987", "AAA", 17.5f, 98);
-		Productos miProducto4 = new Productos("E987", "AAA", 17.5f, 98);
+		Productos miProducto4 = new Productos("E987", "AAA", 17.5f, 98);*/
 		
 		miDeposito.agregarProducto(miProducto);
-		miDeposito.agregarProducto(miProducto2);
+		/*miDeposito.agregarProducto(miProducto2);
 		miDeposito.agregarProducto(miProducto3);
 		miDeposito.agregarProducto(miProducto4);
-		miDeposito.agregarProducto(miProducto1);
+		miDeposito.agregarProducto(miProducto1);*/
 		
 		miDeposito.verListaProductos();
 		System.out.println("--------|-----------");
-		miDeposito.eliminarProducto("A987");
-		miDeposito.verListaProductos();*/
+		//miDeposito.eliminarProducto("A987");
+		//miDeposito.verListaProductos();
+		System.out.println(miDeposito.validarContrasenia(miProducto.getContrasenia()));
+		
+		miProducto.setContrasenia("1holahol");
+		System.out.println(miDeposito.validarContrasenia(miProducto.getContrasenia()));
+		
 	  
 	}
 		

@@ -6,14 +6,16 @@ public class Productos
 	private String descripcion;
 	private float precio;
 	private int cantidadProductos;
+	private String contrasenia;
 
 
-	public Productos(String codigo, String descripcion, float precio, int cantidadProductos) 
+	public Productos(String codigo, String descripcion, float precio, int cantidadProductos, String contrasenia) 
 	{
 		this.codigo= codigo;
 	    this.descripcion= descripcion;
 	    this.precio= precio;
 	    this.cantidadProductos= cantidadProductos;
+	    this.contrasenia = contrasenia;
 	}
 		
 	
@@ -61,6 +63,16 @@ public class Productos
 	public int getCantidadProductos()
 	{
 		return cantidadProductos ; 
+	}
+	
+	public String getContrasenia()
+	{
+		return contrasenia;
+	}
+	
+	public void setContrasenia(String contrasenia)
+	{
+		this.contrasenia = contrasenia;
 	}
 
 }
